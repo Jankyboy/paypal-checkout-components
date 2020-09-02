@@ -244,6 +244,106 @@
                     }
                 }
             });
+
+            if (instrument === 'credit') {
+                buttonOpts.push({
+                    style: {
+                        layout: 'horizontal',
+                        tagline: false
+                    },
+                    fundingEligibility: {
+                        paypal: {
+                            eligible: true
+                        },
+                        credit: {
+                            eligible: true
+                        }
+                    },
+                    wallet: {
+                        paypal: {
+                            instruments: [
+                                {
+                                    type: instrument,
+                                    label: '••1337',
+                                    oneClick: (instrument === 'card' || instrument === 'balance')
+                                }
+                            ]
+                        },
+                        credit: {
+                            instruments: [
+                                {
+                                    type: instrument,
+                                    label: '••1337',
+                                    oneClick: (instrument === 'card' || instrument === 'balance')
+                                }
+                            ]
+                        }
+                    }
+                });
+
+                buttonOpts.push({
+                    fundingEligibility: {
+                        paypal: {
+                            eligible: true
+                        },
+                        credit: {
+                            eligible: true
+                        }
+                    },
+                    wallet: {
+                        paypal: {
+                            instruments: [
+                                {
+                                    type: instrument,
+                                    label: '••1337',
+                                    oneClick: (instrument === 'card' || instrument === 'balance')
+                                }
+                            ]
+                        },
+                        credit: {
+                            instruments: [
+                                {
+                                    type: instrument,
+                                    label: '••1337',
+                                    oneClick: (instrument === 'card' || instrument === 'balance')
+                                }
+                            ]
+                        }
+                    }
+                });
+
+                buttonOpts.push({
+                    fundingSource: 'credit',
+                    fundingEligibility: {
+                        paypal: {
+                            eligible: true
+                        },
+                        credit: {
+                            eligible: true
+                        }
+                    },
+                    wallet: {
+                        paypal: {
+                            instruments: [
+                                {
+                                    type: instrument,
+                                    label: '••1337',
+                                    oneClick: (instrument === 'card' || instrument === 'balance')
+                                }
+                            ]
+                        },
+                        credit: {
+                            instruments: [
+                                {
+                                    type: instrument,
+                                    label: '••1337',
+                                    oneClick: (instrument === 'card' || instrument === 'balance')
+                                }
+                            ]
+                        }
+                    }
+                });
+            }
         }
 
         for (const instrument of instruments) {
