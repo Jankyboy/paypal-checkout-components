@@ -40,5 +40,13 @@ export type ContentType = {|
 |};
 
 export type Experiment = {|
-    oldWalletDesign : boolean
+
+|};
+
+export type LazyExport<T> = {|
+    __get__ : () => T
+|};
+
+export type LazyProtectedExport<T> = {|
+    __get__ : () => ?T
 |};

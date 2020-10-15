@@ -1,7 +1,7 @@
 /* @flow */
 /** @jsx node */
 
-import { FUNDING } from '@paypal/sdk-constants/src';
+import { FUNDING, ENV } from '@paypal/sdk-constants/src';
 import { node, Style, Fragment } from 'jsx-pragmatic/src';
 import { PPLogo, LOGO_COLOR } from '@paypal/sdk-logos/src';
 
@@ -29,7 +29,7 @@ export function getPaylaterConfig() : FundingSourceConfig {
 
             let text;
 
-            if (products.flex && products.flex.eligible) {
+            if (products.flex && products.flex.eligible && __ENV__ !== ENV.LOCAL && __ENV__ !== ENV.STAGE && __ENV__ !== ENV.SANDBOX) {
                 text = (
                     <Fragment>
                         <Text optional>PayPal </Text>
@@ -50,17 +50,28 @@ export function getPaylaterConfig() : FundingSourceConfig {
         },
     
         colors: [
-            BUTTON_COLOR.WHITE
+            BUTTON_COLOR.WHITE,
+            BUTTON_COLOR.BLACK,
+            BUTTON_COLOR.GOLD,
+            BUTTON_COLOR.BLUE,
+            BUTTON_COLOR.SILVER
         ],
 
         secondaryColors: {
-            [ DEFAULT ]:            BUTTON_COLOR.WHITE,
-            [ BUTTON_COLOR.BLACK ]: BUTTON_COLOR.BLACK
+            [ DEFAULT ]:             BUTTON_COLOR.WHITE,
+            [ BUTTON_COLOR.GOLD ]:   BUTTON_COLOR.GOLD,
+            [ BUTTON_COLOR.BLUE ]:   BUTTON_COLOR.BLUE,
+            [ BUTTON_COLOR.SILVER ]: BUTTON_COLOR.SILVER,
+            [ BUTTON_COLOR.BLACK ]:  BUTTON_COLOR.BLACK,
+            [ BUTTON_COLOR.WHITE ]:  BUTTON_COLOR.WHITE
         },
 
         logoColors: {
-            [ BUTTON_COLOR.WHITE ]: LOGO_COLOR.BLUE,
-            [ BUTTON_COLOR.BLACK ]: LOGO_COLOR.WHITE
+            [BUTTON_COLOR.GOLD]:   LOGO_COLOR.BLUE,
+            [BUTTON_COLOR.SILVER]: LOGO_COLOR.BLUE,
+            [BUTTON_COLOR.BLUE]:   LOGO_COLOR.WHITE,
+            [BUTTON_COLOR.BLACK]:  LOGO_COLOR.WHITE,
+            [BUTTON_COLOR.WHITE]:  LOGO_COLOR.BLUE
         },
         
         labelText: `${ FUNDING.PAYPAL } ${ FUNDING.PAYLATER }`

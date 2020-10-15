@@ -1,10 +1,10 @@
 {
     "name": "@paypal/checkout-components",
-    "version": "5.0.110",
+    "version": "5.0.127",
     "description": "PayPal Checkout components, for integrating checkout products.",
     "main": "index.js",
     "scripts": {
-        "dev": "babel-node $(npm bin)/webpack-dev-server --config webpack.config.dev.js --port 9000 --host localhost.paypal.com --open-page demo/dev/index.htm --https --hot=false --inline=false",
+        "dev": "babel-node $(npm bin)/webpack-dev-server --config webpack.config.dev.js --port 9001 --host localhost.paypal.com --open-page demo/dev/index.htm --https --hot=false --inline=false",
         "lint": "eslint --ext .js --ext .jsx src/ test/ *.js",
         "flow-typed": "rm -rf flow-typed && flow-typed install",
         "flow": "flow",
@@ -63,7 +63,7 @@
     "devDependencies": {
         "babel-core": "^7.0.0-bridge.0",
         "conventional-changelog-cli": "^2.0.34",
-        "flow-bin": "^0.131.0",
+        "flow-bin": "^0.135.0",
         "fs-extra": "^9.0.1",
         "grumbler-scripts": "^3.0.70",
         "imagemagick": "^0.1.3",
@@ -80,7 +80,6 @@
     "dependencies": {
         "@paypal/common-components": "^1.0.10",
         "@paypal/funding-components": "^1.0.17",
-        "@paypal/risk-data-collector": "^1.0.1",
         "@paypal/sdk-client": "^4.0.123",
         "@paypal/sdk-constants": "^1.0.57",
         "@paypal/sdk-logos": "^1.0.26",

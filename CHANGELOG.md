@@ -1,3 +1,135 @@
+## <small>5.0.127 (2020-10-14)</small>
+
+* Enable card button in demo page ([fb7c220](https://github.com/paypal/paypal-checkout-components/commit/fb7c220))
+* Fix powered-by font size ([88e41f9](https://github.com/paypal/paypal-checkout-components/commit/88e41f9))
+* Render all standalone buttons on demo page ([8c085ee](https://github.com/paypal/paypal-checkout-components/commit/8c085ee))
+* Update screenshots ([3f78d42](https://github.com/paypal/paypal-checkout-components/commit/3f78d42))
+
+
+
+## <small>5.0.126 (2020-10-14)</small>
+
+* Re-add Helvetica ([4c07382](https://github.com/paypal/paypal-checkout-components/commit/4c07382))
+
+
+
+## <small>5.0.125 (2020-10-13)</small>
+
+* Make fonts consistent ([0183a47](https://github.com/paypal/paypal-checkout-components/commit/0183a47))
+
+
+
+## <small>5.0.124 (2020-10-12)</small>
+
+* Add __SDK_HOST__ to test globals ([d981061](https://github.com/paypal/paypal-checkout-components/commit/d981061))
+* Alignment fixes ([6721601](https://github.com/paypal/paypal-checkout-components/commit/6721601))
+* Fix label line-height to fix alignment issues ([bef1024](https://github.com/paypal/paypal-checkout-components/commit/bef1024))
+* Improve range of buttons rendered in dev demo ([cf8fe49](https://github.com/paypal/paypal-checkout-components/commit/cf8fe49))
+* Increase button label size and fix alignment issues ([9ae3e50](https://github.com/paypal/paypal-checkout-components/commit/9ae3e50))
+* Move flex to pay later in sandbox env ([17d068f](https://github.com/paypal/paypal-checkout-components/commit/17d068f))
+* Run dev server on port 9001 ([ca9b3bc](https://github.com/paypal/paypal-checkout-components/commit/ca9b3bc))
+* Update button screenshots ([a783902](https://github.com/paypal/paypal-checkout-components/commit/a783902))
+* Upgrade flow ([3edd7ad](https://github.com/paypal/paypal-checkout-components/commit/3edd7ad))
+* Vaulted installments middleware and component (#1434) ([fdfc4a3](https://github.com/paypal/paypal-checkout-components/commit/fdfc4a3)), closes [#1434](https://github.com/paypal/paypal-checkout-components/issues/1434)
+
+
+
+## <small>5.0.123 (2020-10-01)</small>
+
+* Allow buttons to opt-out of automatic/smart mode ([147b8a8](https://github.com/paypal/paypal-checkout-components/commit/147b8a8))
+* Disable flex label on local and stage envs ([efe3818](https://github.com/paypal/paypal-checkout-components/commit/efe3818))
+
+
+
+## <small>5.0.122 (2020-09-30)</small>
+
+* Add full range of colors to paylater ([7bdc239](https://github.com/paypal/paypal-checkout-components/commit/7bdc239))
+
+
+
+## <small>5.0.121 (2020-09-29)</small>
+
+* update field initial height (#1441) ([9b5c0ae](https://github.com/paypal/paypal-checkout-components/commit/9b5c0ae)), closes [#1441](https://github.com/paypal/paypal-checkout-components/issues/1441)
+
+
+
+## <small>5.0.120 (2020-09-28)</small>
+
+* Add logs for pre-render button click ([38efe91](https://github.com/paypal/paypal-checkout-components/commit/38efe91))
+
+
+
+## <small>5.0.119 (2020-09-23)</small>
+
+
+
+
+## <small>5.0.118 (2020-09-23)</small>
+
+* Add placeholder render for wallet button, when id token is passed ([4e62f46](https://github.com/paypal/paypal-checkout-components/commit/4e62f46))
+* Fully remove PP monogram from paypal button ([6c4c600](https://github.com/paypal/paypal-checkout-components/commit/6c4c600))
+* Remove wallet class in prerendered button ([be3611f](https://github.com/paypal/paypal-checkout-components/commit/be3611f))
+
+
+
+## <small>5.0.117 (2020-09-15)</small>
+
+* Use body for fields component autoresize ([25055a5](https://github.com/paypal/paypal-checkout-components/commit/25055a5))
+
+
+
+## <small>5.0.116 (2020-09-15)</small>
+
+* Fix logo colors for paylater button ([5269e72](https://github.com/paypal/paypal-checkout-components/commit/5269e72))
+
+
+
+## <small>5.0.115 (2020-09-14)</small>
+
+* Fix button experiment context type ([06d635e](https://github.com/paypal/paypal-checkout-components/commit/06d635e))
+
+
+
+## <small>5.0.114 (2020-09-14)</small>
+
+* Add experiment to remove PP monogram from paypal button ([f61e9a0](https://github.com/paypal/paypal-checkout-components/commit/f61e9a0))
+* Propagate experiment prop ([abd48a9](https://github.com/paypal/paypal-checkout-components/commit/abd48a9))
+* Ramp up PP Monagram experiment to 50% ([cab6264](https://github.com/paypal/paypal-checkout-components/commit/cab6264))
+
+
+
+## <small>5.0.113 (2020-09-10)</small>
+
+* clean up (#1401) ([190d4ca](https://github.com/paypal/paypal-checkout-components/commit/190d4ca)), closes [#1401](https://github.com/paypal/paypal-checkout-components/issues/1401)
+* Increase delay before taking screenshot ([eaf3dcb](https://github.com/paypal/paypal-checkout-components/commit/eaf3dcb))
+* Revert "Remove unused flow suppression" ([5a8002d](https://github.com/paypal/paypal-checkout-components/commit/5a8002d))
+* Use new paylater button color scheme ([db3b588](https://github.com/paypal/paypal-checkout-components/commit/db3b588))
+
+
+
+## <small>5.0.112 (2020-09-08)</small>
+
+* Make non-vaulted buttons equal size ([837c744](https://github.com/paypal/paypal-checkout-components/commit/837c744))
+* Remove unused flow suppression ([4cd49b7](https://github.com/paypal/paypal-checkout-components/commit/4cd49b7))
+
+
+
+## <small>5.0.111 (2020-09-08)</small>
+
+* Add variations to demo ([e9dd805](https://github.com/paypal/paypal-checkout-components/commit/e9dd805))
+* De-dupe queriedEligibleFunding ([5cb27d9](https://github.com/paypal/paypal-checkout-components/commit/5cb27d9))
+* Default enableBNPL feature flag on in all envs ([fd80c90](https://github.com/paypal/paypal-checkout-components/commit/fd80c90))
+* Fix check-size task ([9a837d4](https://github.com/paypal/paypal-checkout-components/commit/9a837d4))
+* Make credit eligible for tests ([41e3e50](https://github.com/paypal/paypal-checkout-components/commit/41e3e50))
+* pass more query parameters to fields (#1419) ([d847ab6](https://github.com/paypal/paypal-checkout-components/commit/d847ab6)), closes [#1419](https://github.com/paypal/paypal-checkout-components/issues/1419)
+* Re-enable all tests ([2fdf4b5](https://github.com/paypal/paypal-checkout-components/commit/2fdf4b5))
+* Resolve between multiple wallet instruments, and make horizontal wallet button 60% width ([0463ed2](https://github.com/paypal/paypal-checkout-components/commit/0463ed2))
+* Type fixes ([1b66b64](https://github.com/paypal/paypal-checkout-components/commit/1b66b64))
+* update fields endpoint (#1418) ([61890ae](https://github.com/paypal/paypal-checkout-components/commit/61890ae)), closes [#1418](https://github.com/paypal/paypal-checkout-components/issues/1418)
+* Update vaulted credit button screenshot ([3b91f24](https://github.com/paypal/paypal-checkout-components/commit/3b91f24))
+
+
+
 ## <small>5.0.110 (2020-08-31)</small>
 
 * Add data-pay-now attribute to pay now button ([1036e50](https://github.com/paypal/paypal-checkout-components/commit/1036e50))

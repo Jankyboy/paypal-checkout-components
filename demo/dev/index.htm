@@ -3,14 +3,15 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://localhost.paypal.com:9000/sdk.js?client-id=alc_client1"></script>
+    <script src="https://localhost.paypal.com:9001/sdk.js?client-id=alc_client1"></script>
+    <script src="https://localhost.paypal.com:9001/sdk-constants.js"></script>
 </head>
 
 <body>
     <style>
         p {
             border: 1px solid lightblue;
-            padding: 20px 40px;
+            padding: 10px 20px;
             display: inline-block;
             margin: 10px;
             vertical-align: top;
@@ -19,12 +20,11 @@
 
     <script>
         const colors = ['gold', 'blue', 'silver', 'black', 'white'];
-        const widths = ['450px', '300px', '150px'];
+        const widths = ['450px', '300px', '220px', '150px'];
         const fis = ['venmo', 'credit'];
         const taglines = [true, false];
         const labels = ['checkout', 'pay', 'buynow'];
-        const products = ['flex'];
-        const instruments = ['card', 'bank', 'credit', 'balance'];
+        const instruments = ['card', 'bank', 'balance', 'credit'];
         const shapes = ['rect', 'pill']
 
         const markOpts = [
@@ -69,6 +69,9 @@
                                 eligible: true
                             }
                         }
+                    },
+                    card: {
+                        eligible: true
                     }
                 }
             });
@@ -93,6 +96,9 @@
                                 eligible: true
                             }
                         }
+                    },
+                    card: {
+                        eligible: true
                     }
                 }
             });
@@ -116,6 +122,9 @@
                                 eligible: true
                             }
                         }
+                    },
+                    card: {
+                        eligible: true
                     }
                 }
             });
@@ -161,46 +170,6 @@
             });
         }
 
-        for (const product of products) {
-            buttonOpts.push({
-                fundingEligibility: {
-                    paypal: {
-                        eligible: true
-                    },
-                    paylater: {
-                        eligible: true,
-                        products: {
-                            [product]: {
-                                eligible: true
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        for (const product of products) {
-            buttonOpts.push({
-                style: {
-                    layout: 'horizontal',
-                    tagline: false
-                },
-                fundingEligibility: {
-                    paypal: {
-                        eligible: true
-                    },
-                    paylater: {
-                        eligible: true,
-                        products: {
-                            [product]: {
-                                eligible: true
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
         for (const tagline of taglines) {
             buttonOpts.push({
                 style: {
@@ -232,15 +201,186 @@
                         eligible: true
                     }
                 },
-                wallet: {
-                    paypal: {
-                        instruments: [
-                            {
-                                type: instrument,
-                                label: '••1337',
-                                oneClick: (instrument === 'card' || instrument === 'balance')
+                userIDToken: 'abc123',
+                server: {
+                    wallet: {
+                        paypal: {
+                            instruments: [
+                                {
+                                    type: instrument,
+                                    label: '••1337',
+                                    oneClick: (instrument === 'card' || instrument === 'balance')
+                                }
+                            ]
+                        }
+                    }
+                }
+            });
+
+            if (instrument !== 'credit') {
+                buttonOpts.push({
+                    fundingSource: 'paypal',
+                    fundingEligibility: {
+                        paypal: {
+                            eligible: true
+                        },
+                        paylater: {
+                            eligible: true
+                        }
+                    },
+                    userIDToken: 'abc123',
+                    server: {
+                        wallet: {
+                            paypal: {
+                                instruments: [
+                                    {
+                                        type: instrument,
+                                        label: '••1337',
+                                        oneClick: (instrument === 'card' || instrument === 'balance')
+                                    }
+                                ]
                             }
-                        ]
+                        }
+                    }
+                });
+
+            }
+
+            if (instrument === 'credit') {
+                buttonOpts.push({
+                    style: {
+                        layout: 'horizontal',
+                        tagline: false
+                    },
+                    fundingEligibility: {
+                        paypal: {
+                            eligible: true
+                        },
+                        credit: {
+                            eligible: true
+                        }
+                    },
+                    userIDToken: 'abc123',
+                    server: {
+                        wallet: {
+                            paypal: {
+                                instruments: [
+                                    {
+                                        type: instrument,
+                                        label: '••1337',
+                                        oneClick: (instrument === 'card' || instrument === 'balance')
+                                    }
+                                ]
+                            },
+                            credit: {
+                                instruments: [
+                                    {
+                                        type: instrument,
+                                        label: '••1337',
+                                        oneClick: (instrument === 'card' || instrument === 'balance')
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                });
+
+                buttonOpts.push({
+                    fundingEligibility: {
+                        paypal: {
+                            eligible: true
+                        },
+                        credit: {
+                            eligible: true
+                        }
+                    },
+                    userIDToken: 'abc123',
+                    server: {
+                        wallet: {
+                            paypal: {
+                                instruments: [
+                                    {
+                                        type: instrument,
+                                        label: '••1337',
+                                        oneClick: (instrument === 'card' || instrument === 'balance')
+                                    }
+                                ]
+                            },
+                            credit: {
+                                instruments: [
+                                    {
+                                        type: instrument,
+                                        label: '••1337',
+                                        oneClick: (instrument === 'card' || instrument === 'balance')
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                });
+
+                buttonOpts.push({
+                    fundingSource: 'credit',
+                    fundingEligibility: {
+                        paypal: {
+                            eligible: true
+                        },
+                        credit: {
+                            eligible: true
+                        }
+                    },
+                    userIDToken: 'abc123',
+                    server: {
+                        wallet: {
+                            paypal: {
+                                instruments: [
+                                    {
+                                        type: instrument,
+                                        label: '••1337',
+                                        oneClick: (instrument === 'card' || instrument === 'balance')
+                                    }
+                                ]
+                            },
+                            credit: {
+                                instruments: [
+                                    {
+                                        type: instrument,
+                                        label: '••1337',
+                                        oneClick: (instrument === 'card' || instrument === 'balance')
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        for (const instrument of instruments) {
+            buttonOpts.push({
+                style: {
+                    color: 'blue'
+                },
+                fundingEligibility: {
+                    paypal: {
+                        eligible: true
+                    },
+                    paylater: {
+                        eligible: true
+                    }
+                },
+                userIDToken: 'abc123',
+                server: {
+                    wallet: {
+                        paypal: {
+                            instruments: [
+                                {
+                                    type: instrument,
+                                    label: '••1337',
+                                    oneClick: (instrument === 'card' || instrument === 'balance')
+                                }
+                            ]
+                        }
                     }
                 }
             });
@@ -346,28 +486,12 @@
             }
         }
 
-        for (const instrument of instruments) {
+        for (const fundingSource of Object.values(constants.FUNDING)) {
             buttonOpts.push({
-                style: {
-                    color: 'blue'
-                },
+                fundingSource,
                 fundingEligibility: {
-                    paypal: {
+                    [fundingSource]: {
                         eligible: true
-                    },
-                    paylater: {
-                        eligible: true
-                    }
-                },
-                wallet: {
-                    paypal: {
-                        instruments: [
-                            {
-                                type: instrument,
-                                label: '••1337',
-                                oneClick: (instrument === 'card' || instrument === 'balance')
-                            }
-                        ]
                     }
                 }
             });
@@ -382,10 +506,15 @@
 
         for (opts of buttonOpts) {
             for (const width of widths) {
-                const p = document.createElement('p');
-                p.style.minWidth = width;
-                document.body.appendChild(p);
-                paypal.Buttons(opts).render(p);
+                const button = paypal.Buttons(opts);
+                if (button.isEligible()) {
+                    const p = document.createElement('p');
+                    p.style.minWidth = width;
+                    document.body.appendChild(p);
+                    button.render(p);
+                } else {
+                    console.warn(`Not eligible`, opts)
+                }
             }
         }
 
